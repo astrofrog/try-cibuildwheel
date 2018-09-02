@@ -1,5 +1,9 @@
 language: python
 
+env:
+  global:
+    - CIBW_BEFORE_BUILD='pip install numpy==1.10.0'
+
 matrix:
   include:
     - sudo: required
@@ -12,7 +16,7 @@ matrix:
 
 
 install:
-  - $PIP install cibuildwheel==0.9.4 numpy==1.10.0
+  - $PIP install cibuildwheel==0.9.4
   - git clone --depth=1 --recurse-submodules http://github.com/astropy/astropy-healpix
 
 script:
