@@ -2,7 +2,7 @@ language: python
 
 env:
   global:
-    - CIBW_BEFORE_BUILD='pip install numpy==1.10.1 Cython'
+    - CIBW_BEFORE_BUILD='pip install numpy==1.10.4 Cython'
 
 matrix:
   include:

@@ -1,6 +1,6 @@
 environment:
   global:
-    CIBW_BEFORE_BUILD: "pip install numpy==1.10.0 Cython"
+    CIBW_BEFORE_BUILD: "pip install numpy==1.10.4 Cython"
 
 install:
   - pip install cibuildwheel==0.9.4
