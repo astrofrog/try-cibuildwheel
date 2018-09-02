@@ -12,7 +12,7 @@ matrix:
 
 
 install:
-  - $PIP install cibuildwheel==0.9.4
+  - $PIP install cibuildwheel==0.9.4 numpy==1.10.0
   - git clone --depth=1 --recurse-submodules http://github.com/astropy/astropy-healpix
 
 script:

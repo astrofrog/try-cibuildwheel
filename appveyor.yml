@@ -1,5 +1,5 @@
 install:
-  - pip install cibuildwheel==0.9.4
+  - pip install cibuildwheel==0.9.4 numpy==1.10.0
   - git clone http://github.com/astropy/astropy-healpix
 
 build_script:
