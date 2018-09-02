@@ -1,0 +1,18 @@
+language: python
+
+matrix:
+  include:
+    - sudo: required
+      services:
+        - docker
+      env: PIP=pip
+    - os: osx
+      language: generic
+      env: PIP=pip2
+
+before_install:
+  - git clone --depth=1 http://github.com/astropy/astropy-healpix
+
+script:
+  - $PIP install cibuildwheel==0.9.4
+  - cibuildwheel astropy-healpix --output-dir wheelhouse
