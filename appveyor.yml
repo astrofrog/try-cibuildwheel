@@ -10,7 +10,7 @@ install:
 build_script:
   - cd astropy-healpix
   - git checkout v0.2.1
-  - cibuildwheel --output-dir wheelhouse
+  - cibuildwheel --output-dir ..\wheelhouse
   - cd ..
 
 artifacts:
