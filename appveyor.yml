@@ -1,18 +1,17 @@
 environment:
   global:
-    CIBW_BEFORE_BUILD: "pip install numpy==1.12.1 Cython"
+    CIBW_BEFORE_BUILD: "pip install numpy==1.12.1"
     CIBW_SKIP: "cp33-* cp34-* cp37-*"
 
 install:
-  - pip install cibuildwheel==0.9.4
-  - git clone http://github.com/astropy/astropy-healpix
+  - pip install numpy==1.12.1
+  - pip install git+https://github.com/astrofrog/autowheel.git
 
 build_script:
-  - cd astropy-healpix
-  - git checkout v0.2.1
-  - cibuildwheel --output-dir ..\wheelhouse
-  - cd ..
+  - mkdir wheelhouse
+  - autowheel windows --output-dir=wheelhouse --ignore-existing
+  - dir wheelhouse
 
 artifacts:
-  - path: "wheelhouse\\*.whl"
+  - path: "tests\\wheelhouse\\*.whl"
     name: Wheels

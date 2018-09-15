@@ -1,0 +1,26 @@
+- package_name: astropy-healpix
+  python_versions:
+    '0.2.1':
+      - cp27
+      - cp34
+      - cp35
+      - cp36
+      - cp37
+
+- package_name: photutils
+  python_versions:
+    '0.5':
+      - cp27
+      - cp34
+      - cp35
+      - cp36
+      - cp37
+
+- package_name: regions
+  python_versions:
+    '0.3':
+      - cp27
+      - cp34
+      - cp35
+      - cp36
+      - cp37
