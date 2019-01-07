@@ -29,3 +29,14 @@ jobs:
     ${{ if eq(parameters.os, 'macos') }}:
       env:
         CC: clang
+
+  - task: CopyFiles@2
+    inputs:
+      sourceFolder: wheelhouse
+      targetFolder: $(Build.ArtifactStagingDirectory)
+
+steps:
+- task: PublishPipelineArtifact@0
+  inputs:
+    artifactName: 'Wheels'
+    targetPath: $(Build.ArtifactStagingDirectory)
