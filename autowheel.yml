@@ -6,7 +6,13 @@
       - cp34
       - cp35
       - cp36
+
+- package_name: astropy-healpix
+  before_build: pip install numpy==1.14.6
+  python_versions:
+    '0.2.1':
       - cp37
+
 
 - package_name: photutils
   before_build: pip install numpy==1.12.1
@@ -16,6 +22,11 @@
       - cp34
       - cp35
       - cp36
+
+- package_name: photutils
+  before_build: pip install numpy==1.14.6
+  python_versions:
+    '0.5':
       - cp37
 
 - package_name: regions
@@ -26,4 +37,12 @@
       - cp34
       - cp35
       - cp36
+
+- package_name: regions
+  before_build: pip install numpy==1.14.6
+  python_versions:
+    '0.3':
       - cp37
+
+
+ 1.14.6
