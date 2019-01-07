@@ -4,17 +4,25 @@ jobs:
   pool:
     vmImage: 'ubuntu-16.04'
   steps:
-  - script: echo hello from Linux
+  - script: pip install git+https://github.com/astrofrog/autowheel.git
+  - script: mkdir wheelhouse
+  - script: autowheel linux --output-dir=wheelhouse --ignore-existing
+  - script: ls wheelhouse
 
 - job: macOS
   pool:
     vmImage: 'macOS-10.13'
   steps:
   - script: echo hello from macOS
+  - script: mkdir wheelhouse
+  - script: autowheel osx --output-dir=wheelhouse --ignore-existing
+  - script: ls wheelhouse
 
 - job: Windows
   pool:
     vmImage: 'vs2017-win2016'
   steps:
   - script: echo hello from Windows
-
+  - script: mkdir wheelhouse
+  - script: autowheel windows --output-dir=wheelhouse --ignore-existing
+  - script: dir wheelhouse
