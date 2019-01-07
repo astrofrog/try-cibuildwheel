@@ -10,6 +10,9 @@ jobs:
 
   steps:
 
+  - script: pip install pip --upgrade
+    displayName: Updating pip
+
   - script: pip install git+https://github.com/astrofrog/autowheel.git
     displayName: Installing autowheel
 
