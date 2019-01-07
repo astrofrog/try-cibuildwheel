@@ -5,20 +5,24 @@ jobs:
     vmImage: 'ubuntu-16.04'
   steps:
   - script: |
+      set -x -e
       pip install git+https://github.com/astrofrog/autowheel.git
       mkdir wheelhouse
       autowheel linux --output-dir=wheelhouse --ignore-existing
       ls wheelhouse
+    displayName: Building wheels
 
 - job: macOS
   pool:
     vmImage: 'macOS-10.13'
   steps:
   - script: |
+      set -x -e
       pip install git+https://github.com/astrofrog/autowheel.git
       mkdir wheelhouse
       autowheel osx --output-dir=wheelhouse --ignore-existing
       ls wheelhouse
+    displayName: Building wheels
 
 - job: Windows
   pool:
@@ -29,3 +33,4 @@ jobs:
       mkdir wheelhouse
       autowheel windows --output-dir=wheelhouse --ignore-existing
       dir wheelhouse
+    displayName: Building wheels
