@@ -35,8 +35,7 @@ jobs:
       sourceFolder: wheelhouse
       targetFolder: $(Build.ArtifactStagingDirectory)
 
-steps:
-- task: PublishPipelineArtifact@0
-  inputs:
-    artifactName: 'Wheels'
-    targetPath: $(Build.ArtifactStagingDirectory)
+  - task: PublishPipelineArtifact@0
+    inputs:
+      artifactName: 'Wheels'
+      targetPath: $(Build.ArtifactStagingDirectory)
