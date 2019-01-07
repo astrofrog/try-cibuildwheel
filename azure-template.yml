@@ -15,7 +15,8 @@ jobs:
     inputs:
       createCustomEnvironment: True
       environmentName: "wheels"
-      createOptions: python="3.6"
+      packageSpecs: "python=3.6"
+      cleanEnvironment: True
 
   - script: pip install git+https://github.com/astrofrog/autowheel.git
     displayName: Installing autowheel
@@ -25,3 +26,6 @@ jobs:
 
   - script: autowheel ${{ parameters.os }} --output-dir=wheelhouse --ignore-existing
     displayName: Running autowheel
+    ${{ if eq(parameters.os, 'macos') }}:
+      env:
+        CC: clang
